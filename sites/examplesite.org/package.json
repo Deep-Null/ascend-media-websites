@@ -1,6 +1,6 @@
 {
   "name": "@ascend-media/examplesite.org",
-  "version": "1.13.4",
+  "version": "1.14.0",
   "author": "Jake Collins <jake.collins@parameter1.com>",
   "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/sites/examplesite.org",
   "license": "MIT",
@@ -30,7 +30,7 @@
     "win32"
   ],
   "dependencies": {
-    "@ascend-media/package-global": "^1.13.4",
+    "@ascend-media/package-global": "^1.14.0",
     "@parameter1/base-cms-marko-core": "^4.48.1",
     "@parameter1/base-cms-marko-web": "^4.48.1",
     "@parameter1/base-cms-marko-web-gam": "^4.40.3",

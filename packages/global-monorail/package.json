@@ -1,6 +1,6 @@
 {
   "name": "@ascend-media/package-global-monorail",
-  "version": "1.13.5",
+  "version": "1.14.0",
   "author": "Brandon Krigbaum <brandon@parameter1.com>",
   "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/packages/global-monorail",
   "license": "MIT",
