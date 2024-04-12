@@ -1,6 +1,6 @@
 import { get } from "@parameter1/base-cms-object-path";
 
-$ const { config, site, req } = out.global;
+$ const { config, site, req, res } = out.global;
 
 $ const blockName = input.blockName || "site-header";
 
@@ -25,13 +25,19 @@ $ if (navigation.secondary.length) tertiaryMods.push("no-left-margin");
   <default-theme-site-navbar modifiers=["secondary"]>
     $ const isAestheticsSection = req.path.match(/^\/(aesthetics)$/);
     $ const isAestheticsContentOrSubsection = req.path.match(/^\/(aesthetics)\//);
-    <if(get(config, "websiteContext.id") === "60c7666d46f24a64538b458d" && (isAestheticsSection || isAestheticsContentOrSubsection))>
-      $ const pathMatch = isAestheticsSection ? isAestheticsSection[1] : isAestheticsContentOrSubsection[1];
-      <default-theme-site-navbar-brand title=site.get(`logos.${pathMatch}.title`) href=site.get(`logos.${pathMatch}.href`)>
+    <if(
+      get(config, "websiteContext.id") === "60c7666d46f24a64538b458d"
+      && (
+        isAestheticsSection
+        || isAestheticsContentOrSubsection
+        || get(res, "locals.publisherId") === "6616ec037741e70001294f79"
+        )
+    )>
+      <default-theme-site-navbar-brand title=site.get("logos.aesthetics.title") href=site.get("logos.aesthetics.href")>
         <default-theme-site-navbar-logo
-          alt=site.get(`logos.${pathMatch}.title`)
-          src=site.get(`logos.${pathMatch}.src`)
-          srcset=site.getAsArray(`logos.${pathMatch}.srcset`).join(",")
+          alt=site.get("logos.aesthetics.title")
+          src=site.get("logos.aesthetics.src")
+          srcset=site.getAsArray("logos.aesthetics.srcset").join(",")
         />
       </default-theme-site-navbar-brand>
     </if>
