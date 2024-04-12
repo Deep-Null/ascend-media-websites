@@ -24,11 +24,9 @@ $ if (navigation.secondary.length) tertiaryMods.push("no-left-margin");
   <${input.aboveNav} />
   <default-theme-site-navbar modifiers=["secondary"]>
     $ const isAestheticsSection = req.path.match(/^\/(aesthetics)$/);
-    $ const isAestheticsPublisher = req.path.indexOf('660c5ded37196f0001e3cf94');
-
     $ const isAestheticsContentOrSubsection = req.path.match(/^\/(aesthetics)\//);
-    <if(get(config, "websiteContext.id") === "60c7666d46f24a64538b458d" && (isAestheticsSection || isAestheticsContentOrSubsection || isAestheticsPublisher))>
-      $ const pathMatch = (isAestheticsPublisher) ? 'aesthetics' : (isAestheticsSection) ? isAestheticsSection[1] : isAestheticsContentOrSubsection[1];
+    <if(get(config, "websiteContext.id") === "60c7666d46f24a64538b458d" && (isAestheticsSection || isAestheticsContentOrSubsection))>
+      $ const pathMatch = isAestheticsSection ? isAestheticsSection[1] : isAestheticsContentOrSubsection[1];
       <default-theme-site-navbar-brand title=site.get(`logos.${pathMatch}.title`) href=site.get(`logos.${pathMatch}.href`)>
         <default-theme-site-navbar-logo
           alt=site.get(`logos.${pathMatch}.title`)
