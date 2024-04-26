@@ -32,10 +32,10 @@ $ const useAestheticsNavigation = get(config, "websiteContext.id") === "60c7666d
   <default-theme-site-navbar modifiers=["secondary"]>
     <if(useAestheticsNavigation)>
       $ const aestheticsNavigationItems = [{ href: "/aesthetics", label: "Home" }];
-      $ navigation.primary = aestheticsNavigationItems;
-      $ site.config.navigation.menu = [{ label: "Topics", items: aestheticsNavigationItems }];
+      $ navigation.primary = [];
+      $ navigation.menu = [];
       $ navigation.secondary = [{}];
-      $ navigation.tertiary = [{}];
+      $ navigation.tertiary = aestheticsNavigationItems;
       <default-theme-site-navbar-brand title=site.get("logos.aesthetics.title") href=site.get("logos.aesthetics.href")>
         <default-theme-site-navbar-logo
           alt=site.get("logos.aesthetics.title")
