@@ -13,6 +13,13 @@ $ const navigation = {
 
 $ const tertiaryMods = ["tertiary"];
 $ if (navigation.secondary.length) tertiaryMods.push("no-left-margin");
+$ const isAestheticsSection = req.path.match(/^\/(aesthetics)$/);
+$ const isAestheticsContentOrSubsection = req.path.match(/^\/(aesthetics)\//);
+$ const useAestheticsNavigation = get(config, "websiteContext.id") === "60c7666d46f24a64538b458d" && (
+  isAestheticsSection
+  || isAestheticsContentOrSubsection
+  || get(res, "locals.publisherId") === "6616ec037741e70001294f79"
+);
 
 <marko-web-block
   name=blockName
@@ -23,16 +30,12 @@ $ if (navigation.secondary.length) tertiaryMods.push("no-left-margin");
 >
   <${input.aboveNav} />
   <default-theme-site-navbar modifiers=["secondary"]>
-    $ const isAestheticsSection = req.path.match(/^\/(aesthetics)$/);
-    $ const isAestheticsContentOrSubsection = req.path.match(/^\/(aesthetics)\//);
-    <if(
-      get(config, "websiteContext.id") === "60c7666d46f24a64538b458d"
-      && (
-        isAestheticsSection
-        || isAestheticsContentOrSubsection
-        || get(res, "locals.publisherId") === "6616ec037741e70001294f79"
-        )
-    )>
+    <if(useAestheticsNavigation)>
+      $ const aestheticsNavigationItems = [{ href: "/aesthetics", label: "Home" }];
+      $ navigation.primary = [];
+      $ navigation.menu = [];
+      $ navigation.secondary = [{}];
+      $ navigation.tertiary = aestheticsNavigationItems;
       <default-theme-site-navbar-brand title=site.get("logos.aesthetics.title") href=site.get("logos.aesthetics.href")>
         <default-theme-site-navbar-logo
           alt=site.get("logos.aesthetics.title")
@@ -76,15 +79,15 @@ $ if (navigation.secondary.length) tertiaryMods.push("no-left-margin");
   $ const multiLogo = site.get("logos.navbar-secondary.src");
   $ const primaryNavModifiers = multiLogo ? ["primary", "multi-logo"] : ["primary"];
   <default-theme-site-navbar modifiers=primaryNavModifiers>
-  <if(multiLogo)>
-    <default-theme-site-navbar-brand title=`${config.website("name")} Homepage` href=site.get("logos.navbar-secondary.href")>
-      <default-theme-site-navbar-logo
-        alt=config.website("name")
-        src=site.get("logos.navbar-secondary.src")
-        srcset=site.getAsArray("logos.navbar-secondary.srcset").join(",")
-        block-name="site-navbar-secondary"
-      />
-    </default-theme-site-navbar-brand>
+    <if(multiLogo)>
+      <default-theme-site-navbar-brand title=`${config.website("name")} Homepage` href=site.get("logos.navbar-secondary.href")>
+        <default-theme-site-navbar-logo
+          alt=config.website("name")
+          src=site.get("logos.navbar-secondary.src")
+          srcset=site.getAsArray("logos.navbar-secondary.srcset").join(",")
+          block-name="site-navbar-secondary"
+        />
+      </default-theme-site-navbar-brand>
     </if>
     <default-theme-site-navbar-items
       items=navigation.primary
