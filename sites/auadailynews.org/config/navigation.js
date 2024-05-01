@@ -12,11 +12,12 @@ const topics = [
   { href: '/guidelines', label: 'Guidelines' },
   { href: '/industry-highlights', label: 'Industry Highlights' },
   { href: '/science-technology-hall', label: 'Science & Technology Hall' },
+  { href: '/photo-gallery', label: 'Photo Gallery' },
 ];
 
 const secondary = [
-  { href: 'https://www.eventscribe.net/2023/AUA2023/index.asp', label: 'Program', target: '_blank' },
-  { href: 'https://www.auanet.org/AUA2023/register', label: 'Register', target: '_blank' },
+  { href: 'https://www.auanet.org/AUA2024/program', label: 'Program', target: '_blank' },
+  { href: 'https://www.auanet.org/AUA2024/register', label: 'Register', target: '_blank' },
 ];
 
 module.exports = {

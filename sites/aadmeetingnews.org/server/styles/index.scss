@@ -30,3 +30,9 @@ $theme-site-navbar-secondary-type: light;
     background-color: $primary;
   }
 }
+
+.marko-web-icon--twitter {
+  svg {
+    fill: #fff !important;
+  }
+}

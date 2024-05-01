@@ -52,4 +52,5 @@ module.exports = {
     cookieDomain: process.env.NODE_ENV === 'production' ? 'hypertension.hub.heart.org' : '',
   },
   ahaFooter: true,
+  civicComputingApiId: process.env.CIVIC_COMPUTING_API_ID,
 };

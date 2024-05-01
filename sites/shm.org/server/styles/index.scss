@@ -1,6 +1,6 @@
 @import "@ascend-media/package-global/scss/variables";
 
-$primary: #bd2633;
+$primary: #202944;
 $secondary: #57262f;
 
 $theme-site-navbar-logo-height: 100px;
@@ -11,7 +11,7 @@ $theme-site-footer-primary-bg-color: $primary;
 $theme-site-footer-secondary-bg-color: $primary;
 $theme-site-footer-copyright-color: #fff;
 $theme-site-navbar-primary-bg-color: $primary;
-$theme-site-navbar-secondary-bg-color: #00a6b6;
+$theme-site-navbar-secondary-bg-color: #c9187e;
 $theme-site-navbar-secondary-type: light;
 
 
@@ -25,7 +25,7 @@ $theme-site-navbar-secondary-type: light;
     display: none;
   }
   &__header a {
-    color: $primary;
+    color: #00a6b6;
   }
   &__header {
     color: #795259;
@@ -36,6 +36,9 @@ $theme-site-navbar-secondary-type: light;
   &--native-x-list {
     $self: &;
     .node-list {
+      &__header {
+        background-color: #c9187e;
+      }
       &__nodes {
         background-color: #d6d3c4;
       }
@@ -96,7 +99,7 @@ $theme-site-navbar-secondary-type: light;
 .site-footer {
   &__container--secondary,
   &__container--primary {
-    background-color: #ffa400;
+    background-color: #202944;
   }
   .row {
     width: 100%;
@@ -111,5 +114,12 @@ $theme-site-navbar-secondary-type: light;
     width: 44%;
     font-weight: 500;
     text-align: left;
+    color: #fff;
+  }
+}
+
+.marko-web-icon--twitter {
+  svg {
+    fill: #fff !important;
   }
 }

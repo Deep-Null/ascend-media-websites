@@ -60,4 +60,5 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'imex.ascendmedia.com' : '',
   },
+  civicComputingApiId: process.env.CIVIC_COMPUTING_API_ID,
 };

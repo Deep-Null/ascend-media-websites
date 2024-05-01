@@ -49,4 +49,5 @@ module.exports = {
     bgColor: '#ffffff',
   },
   ahaFooter: true,
+  civicComputingApiId: process.env.CIVIC_COMPUTING_API_ID,
 };

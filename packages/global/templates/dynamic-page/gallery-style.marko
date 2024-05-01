@@ -31,14 +31,23 @@ $ const { id, alias, pageNode } = data;
         </@section>
         <@section>
           <div class="row">
-          $ const imageNodes = getAsArray(page, "images.edges").map(edge => edge.node);
+          $ const primaryImageId = get(page, "primaryImage.id");
+          $ const imageNodes = getAsArray(page, "images.edges").reduce((array, edge) => {
+            const { node } = edge;
+            return node.id !== primaryImageId ? [...array, node] : array;
+          }, []);
           <for|imageNode| of=imageNodes>
-            <div class="col-md-4 col-lg-3">
-              <img src=imageNode.src alt=imageNode.alt width="100%" height="75%" />
+            <div class="col-md-4 col-lg-3 py-4">
+              <img src=imageNode.src alt=imageNode.alt width="100%" />
               <span class="caption">$!{imageNode.caption}</span>
             </div>
           </for>
           </div>
+        </@section>
+        <@section>
+          <default-theme-page-contents|{ blockName }| class="col">
+            <marko-web-content-body block-name=blockName obj=page />
+          </default-theme-page-contents>
         </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>

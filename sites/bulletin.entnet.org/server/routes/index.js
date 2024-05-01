@@ -5,6 +5,7 @@ const magazine = require('./magazine');
 const search = require('./search');
 const classifieds = require('./classifieds');
 const aboutTheBulletin = require('./about-the-bulletin');
+const websiteSections = require('./website-section');
 
 module.exports = (app) => {
   // Homepage
@@ -25,6 +26,9 @@ module.exports = (app) => {
   // Content Pages
   content(app);
 
-  // Content Pages
+  // About THe Bulletin
   aboutTheBulletin(app);
+
+  // Website Sections
+  websiteSections(app);
 };

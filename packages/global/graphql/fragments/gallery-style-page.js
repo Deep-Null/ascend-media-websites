@@ -4,6 +4,7 @@ module.exports = gql`
 fragment DynamicPageFragment on ContentPage {
   id
   name
+  body
   teaser(input: { useFallback: false, maxLength: null })
   images(input: { pagination: { limit: 100 }, sort: { order: values } }) {
     edges {
@@ -17,6 +18,9 @@ fragment DynamicPageFragment on ContentPage {
         isLogo
       }
     }
+  }
+  primaryImage {
+    id
   }
 }
 `;

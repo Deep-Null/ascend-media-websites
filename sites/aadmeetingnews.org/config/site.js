@@ -64,6 +64,7 @@ module.exports = {
     cookieDomain: process.env.NODE_ENV === 'production' ? 'aadmeetingnews.org' : '',
   },
   exhibitors: {
-    title: 'Small Exhibit Spotlight',
+    title: 'Exhibit Spotlight',
   },
+  civicComputingApiId: process.env.CIVIC_COMPUTING_API_ID,
 };

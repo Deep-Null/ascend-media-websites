@@ -1,17 +1,17 @@
 @import "@ascend-media/package-global/scss/variables";
 
 $primary: #dbecf8;
-$secondary: #092640;
+$secondary: #6dc7b9;
 
 $theme-site-navbar-logo-height: 100px;
 $theme-site-navbar-logo-height-sm: 30px;
 $theme-site-footer-logo-height: 100px;
 $theme-site-footer-logo-height-sm: 50px;
-$theme-site-footer-primary-bg-color: #00567a;
+$theme-site-footer-primary-bg-color: #0050b5;
 $theme-site-footer-secondary-bg-color: $primary;
 $theme-site-footer-copyright-color: #fff;
 $theme-site-navbar-primary-bg-color: $secondary;
-$theme-site-navbar-secondary-bg-color: $primary;
+$theme-site-navbar-secondary-bg-color: #0050b5;
 $theme-site-navbar-secondary-type: light;
 
 
@@ -25,18 +25,21 @@ $theme-site-navbar-secondary-type: light;
 
 .page-contact-details {
   &__content-website a {
-    color: #00567a
+    color: #0050b5
   }
 }
 .node-list {
   &__header {
-    background-color: #00567a;
+    background-color: #0050b5;
   }
 }
 
 .node {
+  &__header {
+    color: #6dc7b9;
+  }
   &__header a {
-    color: #57262f;
+    color: #6dc7b9;
   }
   &__footer-left a {
     color: $secondary;
@@ -66,7 +69,7 @@ $theme-site-navbar-secondary-type: light;
   &--secondary {
     .site-navbar {
       &__link {
-        color: $secondary;
+        color: #fff;
       }
     }
   }
@@ -87,5 +90,11 @@ $theme-site-navbar-secondary-type: light;
         fill: $secondary;
       }
     }
+  }
+}
+
+.marko-web-icon--twitter {
+  svg {
+    fill: #fff !important;
   }
 }

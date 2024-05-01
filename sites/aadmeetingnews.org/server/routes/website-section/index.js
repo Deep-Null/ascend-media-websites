@@ -12,7 +12,7 @@ module.exports = (app) => {
     queryFragment,
   }));
 
-  app.get('/:alias(small-exhibit-spotlight)', withWebsiteSection({
+  app.get('/:alias(exhibit-spotlight)', withWebsiteSection({
     template: exhibitors,
     queryFragment,
   }));

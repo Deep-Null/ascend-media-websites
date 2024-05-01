@@ -78,4 +78,5 @@ module.exports = {
     to: 'DSanford@ascendintegratedmedia.com',
   },
   setSearchSortFieldToScore: true,
+  civicComputingApiId: process.env.CIVIC_COMPUTING_API_ID,
 };

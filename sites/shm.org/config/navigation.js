@@ -21,7 +21,10 @@ module.exports = {
     items: [...topics],
   },
   secondary: {
-    items: [{ href: 'https://www.hospitalmedicine.org/', label: 'hospitalmedicine.org', target: '_blank' }],
+    items: [
+      { href: 'https://www.hospitalmedicine.org/', label: 'hospitalmedicine.org', target: '_blank' },
+      { href: '#', label: '#SHMConverge24' },
+    ],
   },
   tertiary: {
     items: [searchItem],
@@ -34,10 +37,10 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/22671158', label: 'Special events' },
+        { href: 'https://shmconverge.hospitalmedicine.org/special-events/', label: 'Special events', tarbet: '_blank' },
         { href: 'https://shmconverge.hospitalmedicine.org/faq/', label: 'Conference FAQs', target: '_blank' },
-        { href: '/22711263', label: 'Claiming CME and Other Credits' },
-        { href: '/22671101', label: 'SHM Converge 2024' },
+        { href: '/22888966', label: 'Claiming CME and Other Credits' },
+        { href: '/22888967', label: 'SHM Converge 2025' },
       ],
     },
     {

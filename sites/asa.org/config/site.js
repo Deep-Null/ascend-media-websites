@@ -55,4 +55,5 @@ module.exports = {
   },
   useFooterOverride: true,
   showSponsoredSlug: false,
+  civicComputingApiId: process.env.CIVIC_COMPUTING_API_ID,
 };

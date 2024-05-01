@@ -143,6 +143,10 @@ $theme-card-header-background-color: #fff;
   &__logo {
     margin-bottom: map-get($spacers, block);
     filter: none;
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+      aspect-ratio: 390 / 90;
+    }
   }
   &__wrapper {
     @media (min-width: $marko-web-document-container-max-width) {
@@ -192,6 +196,10 @@ $theme-card-header-background-color: #fff;
   }
 }
 
+.node-classified {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
 .document-container {
   &--classifieds {
     .node {
@@ -205,6 +213,57 @@ $theme-card-header-background-color: #fff;
           }
         }
       }
+      &-list {
+        &__header {
+          background-color: $theme-card-header-color;
+          color: #fff;
+        }
+      }
     }
   }
+}
+
+.announcement {
+  z-index: 999999;
+  position: fixed;
+  width: 100%;
+  height: 25px;
+  background-color: #0099A8;
+  border-bottom: 1px solid #c4c6cb;
+  font-weight: $font-weight-bold;
+  font-size: 12px;
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: $marko-web-document-container-max-width;
+    margin: auto;
+    @media (max-width: $marko-web-document-container-max-width) {
+      padding: 0 ($marko-web-page-wrapper-padding * 2);
+    }
+  }
+  &__title {
+    color: $white;
+    font-size: 12px;
+    font-weight: 700;
+    height: 20px;
+    letter-spacing: 0.3px;
+    line-height: 20px;
+    white-space: nowrap;
+    max-width: 150ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.announcement ~ .site-header {
+  padding-top: 25px;
+}
+
+.announcement ~ .site-header ~ .document-container {
+  top: 25px;
+}
+
+.node--hero .node__header {
+  background-color: #0099A8;
 }

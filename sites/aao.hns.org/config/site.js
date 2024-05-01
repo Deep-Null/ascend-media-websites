@@ -53,4 +53,5 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'aaohnsfmeetingnewscentral.org' : '',
   },
+  civicComputingApiId: process.env.CIVIC_COMPUTING_API_ID,
 };
