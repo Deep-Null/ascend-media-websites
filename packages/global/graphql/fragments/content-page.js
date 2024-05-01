@@ -161,7 +161,7 @@ fragment ContentPageFragment on Content {
       }
     }
   }
-  images(input: { pagination: { limit: 100 }, sort: { order: values } }) {
+  images(input: { pagination: { limit: 250 }, sort: { order: values } }) {
     edges {
       node {
         id

@@ -19,7 +19,7 @@ const secondary = [
   { href: '/research-quality', label: 'Research' },
   { href: '/professional-personal-development', label: 'Professional Development' },
   { href: '/business-of-medicine-practice-management', label: 'Practice Management' },
-  { href: 'https://ratecards.ascendeventmedia.com/aao-hnsbulletin2023/', label: 'Advertise', target: '_blank' },
+  { href: 'https://ratecards.ascendeventmedia.com/aao-hnsbulletin2024/', label: 'Advertise', target: '_blank' },
 ];
 
 module.exports = {

@@ -92,6 +92,16 @@ $ const { gamDefer, gtmDefer } = req.query;
     $ const useIdxNewsletterSignup = true !== pushdownDisabled;
     <!-- <theme-site-footer use-idx-newsletter-signup=useIdxNewsletterSignup /> -->
     <global-site-footer use-idx-newsletter-signup=useIdxNewsletterSignup />
+    <if(site.get('civicComputingApiId'))>
+      <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
+      <script>
+        var config = {
+          apiKey: '${site.get('civicComputingApiId')}',
+          product: 'PRO_MULTISITE',
+        };
+        CookieControl.load( config );
+      </script>
+    </if>
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />

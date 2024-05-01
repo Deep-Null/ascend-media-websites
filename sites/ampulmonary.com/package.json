@@ -1,6 +1,6 @@
 {
   "name": "@ascend-media/ampulmonary.com",
-  "version": "1.12.19",
+  "version": "1.15.0",
   "author": "Brandon Krigbaum <brandon@parameter1.com>",
   "repository": "https://github.com/parameter1/ascend-media-websites/tree/master/sites/ampulmonary.com",
   "license": "MIT",
@@ -30,12 +30,12 @@
     "win32"
   ],
   "dependencies": {
-    "@ascend-media/package-global-monorail": "^1.12.19",
-    "@parameter1/base-cms-marko-core": "^4.42.0",
-    "@parameter1/base-cms-marko-web": "^4.42.0",
+    "@ascend-media/package-global-monorail": "^1.15.0",
+    "@parameter1/base-cms-marko-core": "^4.55.4",
+    "@parameter1/base-cms-marko-web": "^4.55.4",
     "@parameter1/base-cms-marko-web-gtm": "^4.40.3",
-    "@parameter1/base-cms-marko-web-identity-x": "^4.40.7",
-    "@parameter1/base-cms-marko-web-theme-monorail": "^4.42.0",
+    "@parameter1/base-cms-marko-web-identity-x": "^4.51.2",
+    "@parameter1/base-cms-marko-web-theme-monorail": "^4.55.4",
     "@parameter1/base-cms-object-path": "^4.40.3",
     "@parameter1/base-cms-utils": "^4.40.3",
     "@parameter1/base-cms-web-cli": "^4.40.3",

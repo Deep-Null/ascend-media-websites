@@ -75,6 +75,16 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <else>
       <default-theme-site-footer show-copyright=site.get("showCopyright") />
     </else>
+    <if(site.get('civicComputingApiId'))>
+      <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
+      <script>
+        var config = {
+          apiKey: '${site.get('civicComputingApiId')}',
+          product: 'PRO_MULTISITE',
+        };
+        CookieControl.load( config );
+      </script>
+    </if>
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />

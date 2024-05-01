@@ -1,6 +1,6 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
 
-$ const { site, req, GAM } = out.global;
+$ const { site, req, GAM, nativeX } = out.global;
 $ const { NODE_ENV } = process.env;
 $ const aboveContainer = get(input, "aboveContainer.renderBody");
 
@@ -12,6 +12,14 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
     <link rel="manifest" href="/site.webmanifest">
     <marko-web-gam-init />
     <marko-web-gtm-init container-id=site.get("gtm.containerId") />
+    <!-- init native-x -->
+    <marko-web-native-x-init
+      uri=nativeX.getUri()
+      enabled=nativeX.isEnabled()
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
     <marko-web-gtm-push data={ env: NODE_ENV } />
     <${input.head} />
     <marko-web-gtm-start />
@@ -31,5 +39,15 @@ $ const aboveContainer = get(input, "aboveContainer.renderBody");
   <@below-container>
     <${input.belowContainer} />
     <bulletin-site-footer />
+    <if(site.get('civicComputingApiId'))>
+      <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
+      <script>
+        var config = {
+          apiKey: '${site.get('civicComputingApiId')}',
+          product: 'PRO_MULTISITE',
+        };
+        CookieControl.load( config );
+      </script>
+    </if>
   </@below-container>
 </marko-web-document>

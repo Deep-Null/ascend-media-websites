@@ -143,6 +143,10 @@ $theme-card-header-background-color: #fff;
   &__logo {
     margin-bottom: map-get($spacers, block);
     filter: none;
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+      aspect-ratio: 390 / 90;
+    }
   }
   &__wrapper {
     @media (min-width: $marko-web-document-container-max-width) {
@@ -192,6 +196,10 @@ $theme-card-header-background-color: #fff;
   }
 }
 
+.node-classified {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
 .document-container {
   &--classifieds {
     .node {
@@ -203,6 +211,12 @@ $theme-card-header-background-color: #fff;
               font-weight: 600;
             }
           }
+        }
+      }
+      &-list {
+        &__header {
+          background-color: $theme-card-header-color;
+          color: #fff;
         }
       }
     }
